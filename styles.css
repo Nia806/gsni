@@ -918,6 +918,49 @@ main {
   outline: none;
 }
 
+.info-panel-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  text-align: left;
+  color: inherit;
+  font-family: inherit;
+}
+
+.info-panel-toggle:focus-visible {
+  outline: 2px solid var(--cream-border-strong);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.info-panel-toggle .info-panel-title {
+  margin-bottom: 0;
+}
+
+.info-panel-toggle[aria-expanded="true"] ~ div,
+.info-panel-toggle[aria-expanded="false"] ~ div {
+  margin-top: 1rem;
+}
+
+.toggle-arrow {
+  font-size: 1.1rem;
+  color: var(--cream-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.info-panel-toggle[aria-expanded="true"] .toggle-arrow {
+  transform: rotate(180deg);
+}
+
+/* ── Site footer ── */
+
 .site-footer {
   border-top: 1px solid var(--cream-border);
   padding: 1.5rem 1.25rem 2rem;
