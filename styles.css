@@ -1000,3 +1000,26 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+.info-panel-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.toggle-arrow {
+  font-size: 18px;
+  color: inherit;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.info-panel-toggle[aria-expanded="true"] .toggle-arrow {
+  transform: rotate(180deg);
+}
