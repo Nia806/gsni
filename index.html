@@ -1553,83 +1553,27 @@ main {
   <script>
 const steps = {
   start: {
-    // question: "Show guidelines and support pathways for:",
     question: "",
-    // subtext:
-    //   "Browse topics at your own pace. Nothing you select is saved or shared — each tag simply narrows the information shown.",
     choices: [
       {
         icon: "ti-alert-triangle",
         text: "Sexual harassment & unwelcome conduct",
-        next: "harassment_type",
+        next: "support_harassment",
       },
       {
         icon: "ti-mood-sad",
         text: "Gender-based discrimination or bullying",
-        next: "discrimination_type",
+        next: "support_discrimination",
       },
       {
         icon: "ti-users",
         text: "Hostile campus environment",
-        next: "microagg",
+        next: "support_hostile",
       },
       {
         icon: "ti-help-circle",
         text: "Not sure what to call it",
         next: "unsure",
-      },
-    ],
-  },
-  harassment_type: {
-    question: "Show regulations regarding conduct by:",
-    subtext: "This helps identify the right reporting pathway.",
-    choices: [
-      {
-        icon: "ti-school",
-        text: "Faculty & staff",
-        next: "harass_faculty",
-      },
-      {
-        icon: "ti-user",
-        text: "Fellow students",
-        next: "harass_student",
-      },
-      {
-        icon: "ti-building",
-        text: "Contractors, visitors & others",
-        next: "harass_other",
-      },
-    ],
-  },
-  discrimination_type: {
-    question: "Show regulations regarding conduct by:",
-    choices: [
-      {
-        icon: "ti-school",
-        text: "Faculty & staff",
-        next: "disc_faculty",
-      },
-      {
-        icon: "ti-user",
-        text: "Fellow students",
-        next: "disc_student",
-      },
-    ],
-  },
-  microagg: {
-    question: "Show resources matched to:",
-    subtext:
-      "There is no wrong answer — your experience matters regardless of how others might categorise it.",
-    choices: [
-      {
-        icon: "ti-flame",
-        text: "Ongoing impact on wellbeing & studies",
-        next: "micro_serious",
-      },
-      {
-        icon: "ti-wave-sine",
-        text: "Uncomfortable but manageable day-to-day",
-        next: "micro_mild",
       },
     ],
   },
@@ -1639,21 +1583,21 @@ const steps = {
       {
         icon: "ti-hand-stop",
         text: "Physical safety & non-consensual contact",
-        next: "harassment_type",
+        next: "support_harassment",
       },
       {
         icon: "ti-eye-off",
         text: "Different treatment based on gender or identity",
-        next: "discrimination_type",
+        next: "support_discrimination",
       },
       {
         icon: "ti-message-circle-off",
         text: "Unwelcome comments, jokes, or behaviour",
-        next: "microagg",
+        next: "support_hostile",
       },
     ],
   },
-  harass_faculty: {
+  support_harassment: {
     question: "I am looking for:",
     subtext:
       "You are protected under the POSH Act (2013) and UGC regulations. Your institution must have an Internal Complaints Committee (ICC).",
@@ -1669,22 +1613,6 @@ const steps = {
         next: "options_first",
       },
       {
-        icon: "ti-heart",
-        text: "Emotional support first",
-        next: "emotional_support",
-      },
-    ],
-  },
-  harass_student: {
-    question: "I am looking for:",
-    subtext: "Harassment by students also falls under your institution's ICC jurisdiction.",
-    choices: [
-      {
-        icon: "ti-file-text",
-        text: "Formal complaint process",
-        next: "formal_icc",
-      },
-      {
         icon: "ti-users",
         text: "Peer & informal support first",
         next: "peer_support",
@@ -1694,35 +1622,25 @@ const steps = {
         text: "Emotional support first",
         next: "emotional_support",
       },
-    ],
-  },
-  harass_other: {
-    question: "I am looking for:",
-    choices: [
-      {
-        icon: "ti-file-text",
-        text: "Formal complaint process",
-        next: "formal_icc",
-      },
       {
         icon: "ti-phone",
         text: "External helplines & organisations",
         next: "external_help",
       },
-      {
-        icon: "ti-heart",
-        text: "Emotional support first",
-        next: "emotional_support",
-      },
     ],
   },
-  disc_faculty: {
+  support_discrimination: {
     question: "I am looking for:",
     choices: [
       {
         icon: "ti-file-text",
         text: "Formal complaint process",
         next: "formal_icc",
+      },
+      {
+        icon: "ti-users",
+        text: "Peer & community support",
+        next: "peer_support",
       },
       {
         icon: "ti-ear",
@@ -1734,30 +1652,17 @@ const steps = {
         text: "Emotional support first",
         next: "emotional_support",
       },
-    ],
-  },
-  disc_student: {
-    question: "I am looking for:",
-    choices: [
       {
-        icon: "ti-file-text",
-        text: "Formal complaint process",
-        next: "formal_icc",
-      },
-      {
-        icon: "ti-users",
-        text: "Peer & community support",
-        next: "peer_support",
-      },
-      {
-        icon: "ti-heart",
-        text: "Emotional support first",
-        next: "emotional_support",
+        icon: "ti-shield-half-filled",
+        text: "Ragging or bullying based on gender/orientation",
+        next: "sogi_ragging",
       },
     ],
   },
-  micro_serious: {
+  support_hostile: {
     question: "I am looking for:",
+    subtext:
+      "There is no wrong answer — your experience matters regardless of how others might categorise it.",
     choices: [
       {
         icon: "ti-file-text",
@@ -1769,16 +1674,6 @@ const steps = {
         text: "Emotional support first",
         next: "emotional_support",
       },
-      {
-        icon: "ti-users",
-        text: "Peer & community support",
-        next: "peer_support",
-      },
-    ],
-  },
-  micro_mild: {
-    question: "I am looking for:",
-    choices: [
       {
         icon: "ti-users",
         text: "Peer & community support",
@@ -1786,13 +1681,23 @@ const steps = {
       },
       {
         icon: "ti-ear",
+        text: "Understanding my options",
+        next: "options_first",
+      },
+      {
+        icon: "ti-user-check",
         text: "Supportive faculty guidance",
         next: "faculty_ally",
       },
       {
-        icon: "ti-file-text",
+        icon: "ti-notebook",
         text: "Documentation guidance",
         next: "document_only",
+      },
+      {
+        icon: "ti-shield-half-filled",
+        text: "Ragging or bullying based on gender/orientation",
+        next: "sogi_ragging",
       },
     ],
   },
@@ -2080,6 +1985,41 @@ const steps = {
         title: "You can always escalate later",
         detail:
           "Documentation supports a formal complaint up to 3 months after an incident, sometimes longer.",
+      },
+    ],
+  },
+  sogi_ragging: {
+    outcome: true,
+    type: "info",
+    badge: "badge-info",
+    badgeText: "Anti-ragging protection",
+    title: "When ragging targets your gender identity or sexual orientation",
+    body:
+      "UGC anti-ragging regulations recognise abuse, bullying, or exclusion targeting a student's gender identity or sexual orientation as ragging — a distinct violation from sexual harassment, handled by your institution's Anti-Ragging Committee rather than the ICC.",
+    resources: [
+      {
+        icon: "ti-shield-half-filled",
+        title: "Anti-Ragging Committee",
+        detail:
+          "Every institution must have one. Serious incidents can also be reported to the UGC's national Anti-Ragging Helpline.",
+      },
+      {
+        icon: "ti-clock",
+        title: "Faster timeline",
+        detail:
+          "Serious ragging cases may require the institution to file an FIR within 24 hours of being reported — a much faster track than ICC inquiries.",
+      },
+      {
+        icon: "ti-heart",
+        title: "Naz Foundation",
+        detail:
+          'LGBTQ+ rights and support — <a href="https://nazindia.org" target="_blank" rel="noopener">nazindia.org</a>',
+      },
+      {
+        icon: "ti-building-community",
+        title: "The Humsafar Trust",
+        detail:
+          'LGBTQ+ counselling, Delhi & Mumbai — <a href="https://humsafar.org" target="_blank" rel="noopener">humsafar.info</a>',
       },
     ],
   },
