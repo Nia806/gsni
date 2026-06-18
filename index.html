@@ -37,30 +37,36 @@
 
   <main id="top">
     <section class="hero">
-      <div class="hero-inner">
-        <h2 class="hero-topline">The Gender Safety Net Initiative</h2>
-        <p class="hero-eyebrow">For students in Indian higher education</p>
-        <h1><em>Your go-to tool</em> for navigating harassment, discrimination, and rights.</h1>
-        <p class="hero-lead">
-          Browse information at your own pace. This tool is fully anonymous, nothing you explore here is recorded, stored, or shared.
-        </p>
-        <div class="hero-actions" role="tablist" aria-label="Choose a section">
-          <button type="button" class="btn panel-trigger is-active" data-panel="guidance" aria-selected="true">
-            <i class="ti ti-compass" aria-hidden="true"></i>
-            Find guidance
-          </button>
-          <button type="button" class="btn panel-trigger" data-panel="rights" aria-selected="false">
-            <i class="ti ti-scale" aria-hidden="true"></i>
-            Your rights
-          </button>
-              <button type="button" class="btn panel-trigger" data-panel="about" aria-selected="false">
-            <i class="ti ti-info-circle" aria-hidden="true"></i>
-            About
-          </button>
-        </div>
-      </div>
-    </section>
+  <div class="hero-bg-wrapper">
+    <div class="hero-inner">
+      <h2 class="hero-topline">The Gender Safety Net Initiative</h2>
+      <p class="hero-eyebrow">For students in Indian higher education</p>
+      <h1><em>Your go-to tool</em> for navigating harassment, discrimination, and rights.</h1>
+      <p class="hero-lead">
+        Browse information at your own pace. This tool is fully anonymous, nothing you explore here is recorded, stored, or shared.
+      </p>
+    </div>
+  </div>
 
+  <div class="hero-buttons-wrapper">
+    <div class="hero-inner">
+      <div class="hero-actions" role="tablist" aria-label="Choose a section">
+        <button type="button" class="btn panel-trigger is-active" data-panel="guidance" aria-selected="true">
+          <i class="ti ti-compass" aria-hidden="true"></i>
+          Find guidance
+        </button>
+        <button type="button" class="btn panel-trigger" data-panel="rights" aria-selected="false">
+          <i class="ti ti-scale" aria-hidden="true"></i>
+          Your rights
+        </button>
+        <button type="button" class="btn panel-trigger" data-panel="about" aria-selected="false">
+          <i class="ti ti-info-circle" aria-hidden="true"></i>
+          About
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
     <div class="notices">
       <div class="notice notice-note">
         <i class="ti ti-info-circle" aria-hidden="true"></i>
@@ -148,53 +154,75 @@
               <li><i class="ti ti-arrow-up" aria-hidden="true"></i><span>You can appeal. If unsatisfied with the ICC outcome, you can escalate to the appellate authority named in your institution's policy.</span></li>
             </ul>
           </article>
+<article>
+  <div class="laws-grid">
+    <!-- Law Card 1: POSH Act -->
+    <div class="law-card-wrapper" onclick="this.classList.toggle('is-flipped')">
+      <div class="law-card-inner">
+        <div class="law-card-front">
+          <i class="law-card-icon ti ti-scale"></i>
+          <h3 class="law-title">The POSH Act, 2013</h3>
+          <p class="law-year">Workplace Protections</p>
+        </div>
+        <div class="law-card-back">
+          <h3 class="law-title">The POSH Act</h3>
+          <p class="law-body">Mandates an Internal Complaints Committee (ICC) in all institutions to handle sexual harassment cases.</p>
+          <ul class="law-points">
+            <li><strong>Timeline:</strong> File within 3 months; inquiry done in 90 days.</li>
+            <li><strong>Privacy:</strong> Strict identity confidentiality mandated.</li>
+          </ul>
+          <a class="law-link" href="https://www.indiacode.nic.in/bitstream/123456789/2104/1/A2013-14.pdf" target="_blank" rel="noopener">
+            <i class="ti ti-external-link" aria-hidden="true"></i> Read Full Act
+          </a>
+        </div>
+      </div>
+    </div>
 
-          <article class="law-card">
-            <h3 class="law-title">The POSH Act, 2013</h3>
-            <p class="law-year">Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act</p>
-            <p class="law-body">The primary legislation covering sexual harassment in Indian workplaces — which includes educational institutions. It mandates every institution to constitute an Internal Complaints Committee (ICC).</p>
-            <ul class="law-points">
-              <li>Every institution with 10+ employees must have an ICC</li>
-              <li>Complaint must be filed within 3 months of the incident (extendable)</li>
-              <li>ICC must complete inquiry within 90 days</li>
-              <li>Your identity must be kept confidential by the ICC</li>
-              <li>Retaliation against complainants is strictly prohibited</li>
-            </ul>
-            <a class="law-link" href="https://www.indiacode.nic.in/bitstream/123456789/2104/1/A2013-14.pdf" target="_blank" rel="noopener">
-              <i class="ti ti-external-link" aria-hidden="true"></i> Read the full Act
-            </a>
-          </article>
+    <!-- Law Card 2: UGC Regulations -->
+    <div class="law-card-wrapper" onclick="this.classList.toggle('is-flipped')">
+      <div class="law-card-inner">
+        <div class="law-card-front">
+          <i class="law-card-icon ti ti-school"></i>
+          <h3 class="law-title">UGC Regulations, 2015</h3>
+          <p class="law-year">Higher Education Mandate</p>
+        </div>
+        <div class="law-card-back">
+          <h3 class="law-title">UGC Regulationss, 2015</h3>
+          <p class="law-body">Extends POSH protections directly to students, establishing clear institutional accountabilities.</p>
+          <ul class="law-points">
+            <li><strong>Composition:</strong> ICC must include student representatives.</li>
+            <li><strong>Penalty:</strong> Non-compliance leads to loss of university grants.</li>
+          </ul>
+          <a class="law-link" href="https://www.ugc.gov.in/pdfnews/7203627_UGC_regulations-harassment.pdf" target="_blank" rel="noopener">
+            <i class="ti ti-external-link" aria-hidden="true"></i> Read PDF
+          </a>
+        </div>
+      </div>
+    </div>
 
-          <article class="law-card">
-            <h3 class="law-title">UGC (Prevention, Prohibition and Redressal) Regulations, 2015</h3>
-            <p class="law-year">University Grants Commission Regulations specifically for Higher Educational Institutions</p>
-            <p class="law-body">These regulations extend protections specifically to students in universities and colleges, going beyond the POSH Act.</p>
-            <ul class="law-points">
-              <li>All HEIs must have an ICC — even those with fewer than 10 employees</li>
-              <li>ICC must include a student representative</li>
-              <li>Institutions must conduct gender sensitisation programmes</li>
-              <li>Non-compliant institutions can lose grants or affiliation</li>
-              <li>ICC must submit annual reports to the UGC</li>
-            </ul>
-            <a class="law-link" href="https://www.ugc.gov.in/pdfnews/7203627_UGC_regulations-harassment.pdf" target="_blank" rel="noopener">
-              <i class="ti ti-external-link" aria-hidden="true"></i> Read the UGC Regulations (PDF)
-            </a>
-          </article>
-
-          <article class="law-card">
-            <h3 class="law-title">UGC Anti-Ragging Regulations</h3>
-            <p class="law-year">2009, amended in 2016</p>
-            <p class="law-body">UGC anti-ragging regulations recognise abuse, bullying, or 			exclusion targeting a student's gender identity or sexual orientation as ragging 		— a distinct violation from sexual harassment, handled by your institution's 			Anti-Ragging Committee rather than the ICC. </p>
-		<ul class="law-points">
-		<li>Anti-Ragging Committee - Every institution must have one. Serious incidents 		can also be reported to the UGC's national Anti-Ragging Helpline - https://			antiragging.in/complaint_register_form.html </li>
-		<li>Faster timeline — Serious ragging cases may require the institution to file 		an FIR within 24 hours of being reported — a much faster track than ICC 			inquiries.</li>
-		</ul>
-	<a class="law-link" href="https://antiragging.in/complaint_register_form.html" 				target="_blank" rel="noopener">
-              <i class="ti ti-external-link" aria-hidden="true"></i> Register a complaint here
-            </a>
-		
-          </article>
-
+    <!-- Law Card 3: Anti-Ragging -->
+    <div class="law-card-wrapper" onclick="this.classList.toggle('is-flipped')">
+      <div class="law-card-inner">
+        <div class="law-card-front">
+          <i class="law-card-icon ti ti-gavel"></i>
+          <h3 class="law-title">Anti-Ragging Regulations</h3>
+          <p class="law-year">2009 & 2016 Amendments</p>
+        </div>
+        <div class="law-card-back">
+          <h3 class="law-title">Anti-Ragging Regulations</h3>
+          <p class="law-body">Recognizes identity-based abuse as ragging, overseen by the Anti-Ragging Committee.</p>
+          <ul class="law-points">
+            <li><strong>Scope:</strong> Explicitly covers gender identity & orientation.</li>
+            <li><strong>Action:</strong> Institutional FIR required within 24 hours.</li>
+          </ul>
+          <a class="law-link" href="https://antiragging.in/complaint_register_form.html" target="_blank" rel="noopener">
+            <i class="ti ti-external-link" aria-hidden="true"></i> File Complaint
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
           <p class="section-label">Official resources</p>
           <div class="links-grid">
             <a class="ext-link" href="https://shebox.wcd.gov.in" target="_blank" rel="noopener">
