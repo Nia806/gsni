@@ -7,9 +7,6 @@
 
 :root {
   --blue: #D7EDFA;
-  --pink: #FFD6EC;
-  --pink-soft: rgba(255, 214, 236, 0.7);
-  --pink-faint: rgba(255, 214, 236, 0.3);
   --black: #000000;
   --stack-gap: 1rem;
   --black-soft: rgba(0, 0, 0, 0.78);
@@ -38,14 +35,6 @@ body {
   min-height: 100vh;
   line-height: 1.65;
   font-size: 16px;
-}
-
-body {
-  background-image: url('bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* Keeps the background image pinned in place while you scroll */
 }
 
 /* Keep body content at a consistent 16px without changing heading scales */
@@ -218,14 +207,14 @@ body.has-scrolled .site-header {
 
 .nav-link.is-active,
 .panel-trigger.is-active {
-  background: var(--pink);
-  color: var(--black);
-  border-color: var(--black-border-strong);
+  background: var(--black);
+  color: var(--blue);
+  border-color: var(--black);
 }
 
 .nav-link:not(.is-active),
 .panel-trigger:not(.is-active) {
-  background: var(--pink-faint);
+  background: var(--blue);
   color: var(--black);
   border-color: var(--black-border-strong);
 }
@@ -250,7 +239,7 @@ main {
   margin: 0 auto;
 }
 
-.hero{
+.hero-topline {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2.5vw, 1.55rem);
   font-weight: 600;
@@ -309,7 +298,7 @@ main {
   font-weight: 500;
   text-decoration: none;
   border: 1px solid var(--black-border-strong);
-  background: var(--pink-faint);
+  background: var(--blue);
   color: var(--black);
   cursor: pointer;
   transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
@@ -320,24 +309,24 @@ main {
 }
 
 .btn.is-active {
-  background: var(--pink);
-  color: var(--black);
-  border-color: var(--black-border-strong);
+  background: var(--black);
+  color: var(--blue);
+  border-color: var(--black);
 }
 
-/* Ensure any active button uses black text (including icons) on pink background */
+/* Ensure any active button uses blue text (including icons) on black background */
 .btn.is-active,
 .nav-link.is-active,
 .panel-trigger.is-active,
 .filter-pill.is-selected {
-  color: var(--black) !important;
+  color: var(--blue) !important;
 }
 
 .btn.is-active i,
 .nav-link.is-active i,
 .panel-trigger.is-active i,
 .filter-pill.is-selected i {
-  color: var(--black) !important;
+  color: var(--blue) !important;
 }
 
 .btn:not(.is-active):hover,
@@ -377,7 +366,7 @@ main {
   padding: 1.15rem 1.2rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--black-border);
-  background: var(--pink-soft);
+  background: var(--surface);
   font-size: 0.9rem;
   color: var(--black-soft);
 }
@@ -431,20 +420,15 @@ main {
 }
 
 .info-panel {
-  background: var(--pink-faint);
+  background: var(--surface);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-lg);
   padding: 1.4rem 1.5rem;
   margin-bottom: var(--stack-gap);
-  transition: background var(--transition);
-}
-
-.info-panel:has(.info-panel-toggle[aria-expanded="true"]) {
-  background: var(--pink-soft);
 }
 
 .info-panel-highlight {
-  background: var(--pink);
+  background: var(--surface-raised);
 }
 
 .info-panel-title {
@@ -528,70 +512,8 @@ main {
   font-weight: 600;
 }
 
-.laws-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--stack-gap);
-  margin-bottom: var(--stack-gap);
-  perspective: 1000px;
-}
-
-.law-card-wrapper {
-  height: 320px;
-  cursor: pointer;
-  perspective: 1000px;
-}
-
-.law-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.law-card-wrapper.is-flipped .law-card-inner {
-  transform: rotateY(180deg);
-}
-
-.law-card-front, .law-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--black-border);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.law-card-front {
-  background: var(--pink-soft);
-  color: var(--black);
-}
-
-.law-card-back {
-  background: var(--pink);
-  color: var(--black);
-  transform: rotateY(180deg);
-  text-align: left;
-  justify-content: flex-start;
-  overflow-y: auto;
-}
-
-.law-card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--black-muted);
-}
-
 .law-card {
-  background: var(--pink-soft);
+  background: var(--surface);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-lg);
   padding: 1.4rem 1.5rem;
@@ -669,7 +591,7 @@ main {
   align-items: center;
   gap: 0.85rem;
   padding: 1rem 1.1rem;
-  background: var(--pink-faint);
+  background: var(--surface);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-md);
   text-decoration: none;
@@ -679,7 +601,7 @@ main {
 
 .ext-link:hover,
 .ext-link:focus-visible {
-  background: var(--pink-soft);
+  background: var(--surface-raised);
   border-color: var(--black-border-strong);
   outline: none;
 }
@@ -718,7 +640,7 @@ main {
 }
 
 .guide-card {
-  background: var(--pink-soft);
+  background: var(--surface);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-lg);
   padding: 1.4rem 1.5rem 1.5rem;
@@ -845,7 +767,7 @@ main {
   padding: 0.58rem 0.95rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--black-border);
-  background: var(--pink-faint);
+  background: transparent;
   color: var(--black-soft);
   font-family: var(--font-body);
   font-size: 0.86rem;
@@ -865,9 +787,9 @@ main {
 }
 
 .filter-pill.is-selected {
-  background: var(--pink);
-  border-color: var(--black-border-strong);
-  color: var(--black);
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--blue);
   opacity: 1;
 }
 
@@ -934,7 +856,7 @@ main {
   align-items: flex-start;
   padding: 0.85rem 0.95rem;
   border-radius: var(--radius-sm);
-  background: var(--pink-soft);
+  background: var(--black-faint);
   border: 1px solid var(--black-border);
 }
 
@@ -1046,16 +968,6 @@ main {
   text-align: center;
   color: var(--black-muted);
   font-size: 0.86rem;
-}
-
-@media (max-width: 850px) {
-  .laws-grid {
-    grid-template-columns: 1fr;
-  }
-  .law-card-wrapper {
-    height: auto;
-    min-height: 200px;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1193,7 +1105,7 @@ main {
   margin: 1.25rem 0;
 }
 .stat-card {
-  background: var(--pink-soft);
+  background: var(--surface);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-lg);
   padding: 1.25rem 1.25rem;
@@ -1251,7 +1163,7 @@ main {
 .about-cta {
   margin-top: 2rem;
   padding: 1.4rem;
-  background: var(--pink-soft);
+  background: var(--surface-raised);
   border: 1px solid var(--black-border);
   border-radius: var(--radius-lg);
   text-align: center;
